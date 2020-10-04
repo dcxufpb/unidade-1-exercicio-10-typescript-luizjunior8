@@ -92,7 +92,8 @@ Bai 1 - Mun 1 - E1
 CEP:11111-111 Tel (11) 1111-1111
 Obs 1
 CNPJ: 11.111.111/1111-11
-IE: 123456789`
+IE: 123456789
+`;
 
 const TEXTO_ESPERADO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO: string = `Loja 1
 Log 1, s/n
@@ -100,7 +101,8 @@ Mun 1 - E1
 CEP:11111-111 Tel (11) 1111-1111
 Obs 1
 CNPJ: 11.111.111/1111-11
-IE: 123456789`
+IE: 123456789
+`;
 
 
 test('Loja Completa', () => {
@@ -219,18 +221,18 @@ test('Número zero, complemento e bairro vazios', () => {
 test('Exercício 2 - customizado', () => {
 
   // Defina seus próprios valores para as variáveis a seguir
-  let nome_loja = "";
-  let logradouro = "";
-  let numero = 0;
-  let complemento = "";
-  let bairro = "";
-  let municipio = "";
-  let estado = "";
-  let cep = "";
-  let telefone = "";
-  let observacao = "";
-  let cnpj = "";
-  let inscricao_estadual = "";
+  let nome_loja = "Jr Tech";
+  let logradouro = "Geraldo Correia de Melo";
+  let numero = 100;
+  let complemento = "Casa";
+  let bairro = "Centro";
+  let municipio = "Aracagi";
+  let estado = "PB";
+  let cep = "58270-000";
+  let telefone = "(83) 98111-2696";
+  let observacao = "Matriz";
+  let cnpj = "89.415.255/0001-29";
+  let inscricao_estadual = "309.808.863.000";
 
   let loja_customizada: Loja = new Loja(nome_loja, logradouro, numero,
     complemento, bairro, municipio, estado, cep, telefone, observacao, cnpj,
@@ -238,6 +240,12 @@ test('Exercício 2 - customizado', () => {
 
   //E atualize o texto esperado abaixo
   expect(loja_customizada.dados_loja()).toBe(
-      `
+      `Jr Tech
+Geraldo Correia de Melo, 100 Casa
+Centro - Aracagi - PB
+CEP:58270-000 Tel (83) 98111-2696
+Matriz
+CNPJ: 89.415.255/0001-29
+IE: 309.808.863.000
 `);
 });
